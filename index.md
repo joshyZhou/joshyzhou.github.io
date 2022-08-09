@@ -4,7 +4,8 @@ You can use the [editor on GitHub](https://github.com/joshyZhou/joshyZhou.github
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-For changes
+I am interested in the research of computer vision, machine learning, and 3D human pose estimation. 
+
 
 ### Markdown
 
