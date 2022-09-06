@@ -58,22 +58,22 @@
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-          <tr onmouseout="malle_stop()" onmouseover="malle_start()">
+          <tr onmouseout="DCGNet_stop()" onmouseover="DCGNet_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='malle_image'>
+                <div class="two" id='DCGNet_image'>
                   <img src='images/MM_DCGNet_on.png' width="160"></div>
-                <img src='images/MM_DCGNet_on.png' width="160">
+                <img src='images/MM_DCGNet_off.png' width="160">
               </div>
               <script type="text/javascript">
-                function malle_start() {
-                  document.getElementById('malle_image').style.opacity = "1";
+                function DCGNet_start() {
+                  document.getElementById('DCGNet_image').style.opacity = "1";
                 }
 
-                function malle_stop() {
-                  document.getElementById('malle_image').style.opacity = "0";
+                function DCGNet_stop() {
+                  document.getElementById('DCGNet_image').style.opacity = "0";
                 }
-                malle_stop()
+                DCGNet_stop()
               </script>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
@@ -105,7 +105,45 @@
 
 
 
+          <tr onmouseout="ACCV20_stop()" onmouseover="ACCV20_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='ACCV20_image'>
+                  <img src='images/ACCV_LocalitySimilarity.png' width="160"></div>
+                <img src='images/ACCV_LocalitySimilarity.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function DCGNet_start() {
+                  document.getElementById('ACCV20_image').style.opacity = "1";
+                }
 
+                function DCGNet_stop() {
+                  document.getElementById('ACCV20_image').style.opacity = "0";
+                }
+                ACCV20_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+                <a href="data/ACCV_LocalitySimilarity_pdf.pdf">
+                <papertitle>Towards Locality Similarity Preserving to 3D Human Pose Estimation</papertitle>
+                </a>
+              <br>
+              <strong>Shihao Zhou</strong>,
+              <a href="https://mengxijiang.github.io/">Mengxi Jiang</a>,
+              Qicong Wang,
+              <a href="https://cs.xmu.edu.cn/info/1008/1152.htm">Yunqi Lei</a>
+              <br>
+              <em>Asian Conference on Computer Vision (ACCV) Workshop, 2020</em>
+              <br>
+              project page
+              /
+              <a href="data/ACCV_LocalitySimilarity_pdf.pdf">pdf</a>
+              <p></p>
+              <p>
+              Exploring deep relations within mesh vertices and proposing a shape completion task for human mesh reconstruction.
+              </p>
+            </td>
+          </tr>
 
 
 
