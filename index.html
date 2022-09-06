@@ -58,6 +58,49 @@
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+          <tr onmouseout="JSL3d_stop()" onmouseover="JSL3d_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='JSL3d_image'>
+                  <img src='images/PR_JSL3d.png' width="160"></div>
+                <img src='images/PR_JSL3d.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function JSL3d_start() {
+                  document.getElementById('JSL3d_image').style.opacity = "1";
+                }
+
+                function JSL3d_stop() {
+                  document.getElementById('JSL3d_image').style.opacity = "0";
+                }
+                JSL3d_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="data/PR_JSL3d_paper.pdf">
+                <papertitle>JSL3d: Joint subspace learning with implicit structure supervision for 3D pose estimation</papertitle>
+              </a>
+              <br>
+              <a href="https://mengxijiang.github.io/">Mengxi Jiang</a>,
+							<strong>Shihao Zhou</strong>,
+              Cuihua Li,
+              <a href="https://cs.xmu.edu.cn/info/1008/1152.htm">Yunqi Lei</a>
+              <br>
+              <em>Pattern Recognition (PR), 132(2022) 108965</em>
+              <br>
+              project page
+              /
+              <a href="data/PR_JSL3d_paper.pdf">pdf</a>
+              /
+              <a href="data/PR_JSL3d.bib">bibtex</a>
+              <p></p>
+              <p>
+              A  novel joint subspace learning approach with implicit structure supervision based on Sparse Representation (SR) model, capturing the latent spatial relations of 2D body joints by an end-to-end autoencoder network.
+              </p>
+            </td>
+          </tr>
+
+
           <tr onmouseout="DCGNet_stop()" onmouseover="DCGNet_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -102,9 +145,6 @@
             </td>
           </tr>
 
-
-
-
           <tr onmouseout="ACCV20_stop()" onmouseover="ACCV20_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -140,7 +180,7 @@
               <a href="data/ACCV_LocalitySimilarity_pdf.pdf">pdf</a>
               <p></p>
               <p>
-              Exploring deep relations within mesh vertices and proposing a shape completion task for human mesh reconstruction.
+              A simple example-based approach with locality similarity preserving to estimate 3D human pose.
               </p>
             </td>
           </tr>
