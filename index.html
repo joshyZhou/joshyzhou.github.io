@@ -61,7 +61,50 @@
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+          <tr onmouseout="AST_stop()" onmouseover="AST_start()">
+            <td style="padding:20px;width:25%;vertical-align:top">
+              <div class="one">
+                <div class="two" id='AST_image'>
+                  <img src='images/cvpr_AST_off.png' width="160"></div>
+                <img src='images/cvpr_AST_on.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function AST_start() {
+                  document.getElementById('AST_image').style.opacity = "1";
+                }
 
+                function AST_stop() {
+                  document.getElementById('AST_image').style.opacity = "0";
+                }
+                AST_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:top">
+              <!-- <a href="data/PR_JSL3d_paper.pdf"> -->
+                <papertitle>Adapt or Perish: Adaptive Sparse Transformer with Attentive Feature Refinement for Image Restoration</papertitle>
+              <!-- </a> -->
+              <br>
+              <!-- <a href="https://mengxijiang.github.io/">Mengxi Jiang</a>, -->
+							<strong>Shihao Zhou</strong>,
+              Duosheng Chen,
+              <a href="https://jspan.github.io/">Jinshan Pan</a>,
+              <a href="https://jingleishi.github.io/">Jinglei Shi</a>,
+              <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>,
+              <!-- <a href="https://cs.xmu.edu.cn/info/1008/1152.htm">Yunqi Lei</a> -->
+              <br>
+              <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024</em>
+              <br>
+              <!-- <a href="CVPR_AST_2024/index.html">project page</a> -->
+              project page
+              /
+              pdf<!-- pdf<a href="data/PR_JSL3d_paper.pdf">pdf</a> -->
+              /
+              <a href="data/CVPR24_AST.bib">bibtex</a>
+              <p>
+              We present AST, an efficient Transformer-based model, that facilitates the flow of the most useful information forward, extracting more constructive features for the recovery of clear images.
+              </p>
+            </td>
+          </tr>
 
           <tr onmouseout="JSL3d_stop()" onmouseover="JSL3d_start()">
             <td style="padding:20px;width:25%;vertical-align:top">
