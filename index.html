@@ -61,6 +61,51 @@
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+          <tr onmouseout="FPro_stop()" onmouseover="FPro_start()">
+            <td style="padding:20px;width:25%;vertical-align:top">
+              <div class="one">
+                <div class="two" id='FPro_image'>
+                  <img src='images/eccv_FPro_off.png' width="160"></div>
+                <img src='images/eccv_FPro_on.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function FPro_start() {
+                  document.getElementById('FPro_image').style.opacity = "1";
+                }
+
+                function FPro_stop() {
+                  document.getElementById('FPro_image').style.opacity = "0";
+                }
+                AST_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:top">
+              <!-- <a href="data/PR_JSL3d_paper.pdf"> -->
+                <papertitle>Seeing the Unseen: A Frequency Prompt Guided Transformer for Image Restoration</papertitle>
+              <!-- </a> -->
+              <br>
+              <!-- <a href="https://mengxijiang.github.io/">Mengxi Jiang</a>, -->
+							<strong>Shihao Zhou</strong>,
+              <a href="https://jspan.github.io/">Jinshan Pan</a>,
+              <a href="https://jingleishi.github.io/">Jinglei Shi</a>,
+              <a href="https://github.com/Calvin11311">Duosheng Chen</a>,
+              <a href="https://github.com/qulishen/">Lishen Qu</a>,
+              <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>,
+              <!-- <a href="https://cs.xmu.edu.cn/info/1008/1152.htm">Yunqi Lei</a> -->
+              <br>
+              <em>European Conference on Computer Vision (ECCV), 2024</em>
+              <br>
+              <a href="https://github.com/joshyZhou/FPro">project page </a>
+              /
+              <a href="https://arxiv.org/pdf/2404.00288">arXiv</a>
+              /
+              bibtex
+              <p>
+                We develop a Frequency Prompting image restoration method, dubbed FPro, which can effectively provide prompt components from a frequency perspective to guild the restoration model.
+              </p>
+            </td>
+          </tr>
+
           <tr onmouseout="AST_stop()" onmouseover="AST_start()">
             <td style="padding:20px;width:25%;vertical-align:top">
               <div class="one">
