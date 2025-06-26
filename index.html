@@ -52,20 +52,6 @@
               <p><strong><span class="label label-default">[Jul , 2024]</span> </strong>  <a href="https://github.com/joshyZhou/FPro">FPro</a> is accepted by ECCV 2024.</p>
               <p><strong><span class="label label-default">[Feb , 2024]</span> </strong>  <a href="https://github.com/joshyZhou/AST">AST</a> is accepted by CVPR 2024.</p>
 
-              <!-- <tr>
-                <th scope="row">Jul 2, 2024</th>
-                <td>
-                  
-                  <a href="https://github.com/joshyZhou/FPro">FPro</a> is accepted by ECCV 2024.
-      
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    [Feb 27, 2024]<a href="https://github.com/joshyZhou/AST">AST</a> is accepted by CVPR 2024.
-                </td>
-              </tr> -->
             </td>
           </tr>
         </tbody></table>
@@ -83,7 +69,49 @@
 
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr onmouseout="HINT_stop()" onmouseover="HINT_start()">
+            <td style="padding:20px;width:25%;vertical-align:top">
+              <div class="one">
+                <div class="two" id='HINT_image'>
+                  <img src='images/iccv_HINT_on.png' width="160"></div>
+                <img src='images/iccv_HINT_off.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function HINT_start() {
+                  document.getElementById('HINT_image').style.opacity = "1";
+                }
 
+                function HINT_stop() {
+                  document.getElementById('HINT_image').style.opacity = "0";
+                }
+                HINT_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:top">
+              <!-- <a href="data/PR_JSL3d_paper.pdf"> -->
+                <papertitle>Devil is in the Uniformity: Exploring Diverse Learners within Transformer for Image Restoration</papertitle>
+              <!-- </a> -->
+              <br>
+							<strong>Shihao Zhou</strong>, 
+              <a href="https://github.com/nkldy22">Dayu Li</a>,
+              <a href="https://jspan.github.io/">Jinshan Pan</a>,
+              <a href="https://zhoujuncheng99.github.io/">Juncheng Zhou</a>,
+              <a href="https://jingleishi.github.io/">Jinglei Shi</a>,
+              <a href="https://github.com/qulishen/">Lishen Qu</a>,
+              <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>,
+              <br>
+              <em>IEEE/CVF International Conference on Computer Vision (ICCV), 2025</em>
+              <br>
+              <a href="https://github.com/joshyZhou/HINT">project page </a>
+              /
+              <a href="https://arxiv.org/abs/2503.20174">arXiv</a>
+              /
+              <a href="data/ICCV25_HINT.bib">bibtex</a>
+              <p>
+                A Hierarchical multI-head atteNtion driven Transformer (HINT) model for removing undesired degradations from images.
+              </p>
+            </td>
+          </tr>
           <tr onmouseout="MDT_stop()" onmouseover="MDT_start()">
             <td style="padding:20px;width:25%;vertical-align:top">
               <div class="one">
@@ -99,7 +127,7 @@
                 function MDT_stop() {
                   document.getElementById('MDT_image').style.opacity = "0";
                 }
-                AST_stop()
+                MDT_stop()
               </script>
             </td>
             <td style="padding:20px;width:75%;vertical-align:top">
@@ -123,7 +151,7 @@
               /
               <a href="data/CVPR25_MDT.bib">bibtex</a>
               <p>
-                we propose Motion Decomposition Transformer (MDT), a transformer-based architecture augmented with polarized modules for deblurring via motion vector decomposition.
+                We propose Motion Decomposition Transformer (MDT), a transformer-based architecture augmented with polarized modules for deblurring via motion vector decomposition.
               </p>
             </td>
           </tr>
