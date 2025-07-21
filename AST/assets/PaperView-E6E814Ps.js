@@ -1,1 +1,0 @@
-import{d as a,c as s,b as e,P as r,e as t,f as c,g as o,o as p,_ as n}from"./index-8cPofN2h.js";const _={class:"paper-container"},d=a({__name:"PaperView",setup(i){return(m,P)=>(p(),s("div",_,[e(r),e(t),e(c),e(o)]))}}),l=n(d,[["__scopeId","data-v-e0e577cc"]]);export{l as default};
