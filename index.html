@@ -8,6 +8,142 @@
 
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<link rel="icon" href="images/circle-nodes-solid.svg">
+  <style>
+    /* 修复Publications部分的CSS */
+    .publication-container {
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    .publication-item {
+      display: flex;
+      margin-bottom: 25px;
+      padding: 15px;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+    }
+    
+    .publication-item:hover {
+      background-color: #f8f9fa;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .publication-image {
+      width: 180px;
+      min-width: 180px;
+      margin-right: 20px;
+    }
+    
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100px;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .image-on, .image-off {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
+    
+    .image-on {
+      opacity: 0;
+    }
+    
+    .image-off {
+      opacity: 1;
+    }
+    
+    .publication-item:hover .image-on {
+      opacity: 1;
+    }
+    
+    .publication-item:hover .image-off {
+      opacity: 0;
+    }
+    
+    .publication-content {
+      flex: 1;
+      min-height: 120px;
+    }
+    
+    .papertitle {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 1.3;
+      margin-bottom: 6px;
+      color: #2c3e50;
+    }
+    
+    .authors {
+      font-size: 14px;
+      margin-bottom: 5px;
+      line-height: 1.4;
+    }
+    
+    .conference {
+      font-style: italic;
+      font-size: 14px;
+      margin-bottom: 8px;
+      color: #555;
+    }
+    
+    .links {
+      margin-bottom: 5px;
+    }
+    
+    .links a {
+      display: inline-block;
+      margin-right: 12px;
+      font-size: 14px;
+      color: #3498db;
+      text-decoration: none;
+    }
+    
+    .links a:hover {
+      text-decoration: underline;
+      color: #2980b9;
+    }
+    
+    .description {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.4;
+      margin-top: 8px;
+    }
+    
+    .highlight {
+      color: #e74c3c;
+      font-weight: bold;
+    }
+    
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .publication-item {
+        flex-direction: column;
+      }
+      
+      .publication-image {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+      
+      .image-wrapper {
+        height: 120px;
+        max-width: 250px;
+        margin: 0 auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -21,12 +157,7 @@
                 <name>Shihao Zhou (周世豪)</name>
               </p>
               <p>I am a final-year PhD student at Nankai University where I am advised by Prof. <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>.                 I am very fortunate to be co-advised by Prof. <a href="https://jspan.github.io/">Jinshan Pan</a> of Nanjing University of Science and Technology.
-
-              <!-- Before that, I completed my Master at Xiamen University and obtained my BS degree at Zhejiang Gongshang University. -->
-              </p>  
-              <!-- <p>
-                I am very fortunate to be co-advised by Prof. <a href="https://jspan.github.io/">Jinshan Pan</a> of Nanjing University of Science and Technology.
-              </p> -->
+              </p>
               <p>
                 I am interested in 3D Computer Vision and Low-level Vision problems.
               </p>
@@ -72,182 +203,133 @@
           </td>
         </tr>
         </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tbody>
         
-            <!-- ASTv2 -->
-            <tr onmouseout="ASTv2_stop()" onmouseover="ASTv2_start()" style="height:80px;">
-              <td style="padding:20px;width:20%;vertical-align:top;overflow: hidden;" >
-                <div class="one">
-                  <div class="two" id="ASTv2_image">
-                    <img src="images/tpami_ASTv2_on.png" height="80px" width="160">
-                  </div>
-                  <img src="images/tpami_ASTv2_off.png" height="80px" width="160">
-                </div>
-                <script type="text/javascript">
-                  function ASTv2_start() {
-                    document.getElementById("ASTv2_image").style.opacity = "1";
-                  }
-                  function ASTv2_stop() {
-                    document.getElementById("ASTv2_image").style.opacity = "0";
-                  }
-                  ASTv2_stop();
-                </script>
-              </td>
-              <td style="padding:20px;width:80%;vertical-align:top;overflow: hidden;height:80px;">
-                <papertitle>Learning An Adaptive Sparse Transformer for Efficient Image Restoration</papertitle>
-                <br>
+        <!-- 修复后的Publications部分 -->
+        <div class="publication-container">
+          <!-- ASTv2 -->
+          <div class="publication-item">
+            <div class="publication-image">
+              <div class="image-wrapper">
+                <img src="images/tpami_ASTv2_on.png" class="image-on" alt="ASTv2 On">
+                <img src="images/tpami_ASTv2_off.png" class="image-off" alt="ASTv2 Off">
+              </div>
+            </div>
+            <div class="publication-content">
+              <div class="papertitle">Learning An Adaptive Sparse Transformer for Efficient Image Restoration</div>
+              <div class="authors">
                 <strong>Shihao Zhou</strong>, 
                 <a href="https://jspan.github.io/">Jinshan Pan</a>,
-                <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>,
-                <br>
-                <em>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2025</em>
-                <br>
+                <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>
+              </div>
+              <div class="conference">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2025</div>
+              <div class="links">
                 <a href="ASTv2/">project page</a> /
                 <a href="https://ieeexplore.ieee.org/document/11106710/authors#authors">early access</a> /
                 <a href="data/TPAMI24_ZhouShihao_AST__Chinese_Version.pdf">中译版</a> /
                 <a href="data/TPAMI25_ASTv2.bib">bibtex</a>
-              </td>
-            </tr>
-        
-            <!-- HINT -->
-            <tr onmouseout="HINT_stop()" onmouseover="HINT_start()" style="height:100px;">
-              <td style="padding:20px;width:20%;vertical-align:top;overflow: hidden;height:80px;">
-                <div class="one">
-                  <div class="two" id="HINT_image">
-                    <img src="images/iccv_HINT_on.png" height="80px" width="160">
-                  </div>
-                  <img src="images/iccv_HINT_off.png" height="80px" width="160">
-                </div>
-                <script type="text/javascript">
-                  function HINT_start() {
-                    document.getElementById("HINT_image").style.opacity = "1";
-                  }
-                  function HINT_stop() {
-                    document.getElementById("HINT_image").style.opacity = "0";
-                  }
-                  HINT_stop();
-                </script>
-              </td>
-              <td style="padding:20px;width:80%;vertical-align:top;overflow: hidden;height:80px;">
-                <papertitle>Devil is in the Uniformity: Exploring Diverse Learners within Transformer for Image Restoration</papertitle>
-                <br>
+              </div>
+            </div>
+          </div>
+
+          <!-- HINT -->
+          <div class="publication-item">
+            <div class="publication-image">
+              <div class="image-wrapper">
+                <img src="images/iccv_HINT_on.png" class="image-on" alt="HINT On">
+                <img src="images/iccv_HINT_off.png" class="image-off" alt="HINT Off">
+              </div>
+            </div>
+            <div class="publication-content">
+              <div class="papertitle">Devil is in the Uniformity: Exploring Diverse Learners within Transformer for Image Restoration</div>
+              <div class="authors">
                 <strong>Shihao Zhou</strong>, 
                 <a href="https://github.com/nkldy22">Dayu Li</a>,
                 <a href="https://jspan.github.io/">Jinshan Pan</a>,
                 <a href="https://zhoujuncheng99.github.io/">Juncheng Zhou</a>,
                 <a href="https://jingleishi.github.io/">Jinglei Shi</a>, 
-                <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>,
-                <br>
-                <em>IEEE/CVF International Conference on Computer Vision (ICCV), 2025</em>
-                <br>
+                <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>
+              </div>
+              <div class="conference">IEEE/CVF International Conference on Computer Vision (ICCV), 2025</div>
+              <div class="links">
                 <a href="HINT/">project page</a> /
                 <a href="https://arxiv.org/abs/2503.20174">arXiv</a> /
                 <a href="data/ICCV25_Zhoushihao_HINT__Chinese_Version.pdf">中译版</a> /
                 <a href="data/ICCV25_HINT.bib">bibtex</a>
-                <p>
-                  A Hierarchical multI-head atteNtion driven Transformer (HINT) model for removing undesired degradations from images.
-                </p>
-              </td>
-            </tr>
-        
-            <!-- MDT -->
-            <tr onmouseout="MDT_stop()" onmouseover="MDT_start()">
-              <td style="padding:20px;width:25%;vertical-align:top">
-                <div class="one">
-                  <div class="two" id="MDT_image">
-                    <img src="images/cvpr_MDT_off.png" width="160">
-                  </div>
-                  <img src="images/cvpr_MDT_on.png" width="160">
-                </div>
-                <script type="text/javascript">
-                  function MDT_start() {
-                    document.getElementById("MDT_image").style.opacity = "1";
-                  }
-                  function MDT_stop() {
-                    document.getElementById("MDT_image").style.opacity = "0";
-                  }
-                  MDT_stop();
-                </script>
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:top">
-                <papertitle>A Polarization-aided Transformer for Image Deblurring via Motion Vector Decomposition</papertitle>
-                <br>
+              </div>
+              <!-- <div class="description">
+                A Hierarchical multI-head atteNtion driven Transformer (HINT) model for removing undesired degradations from images.
+              </div> -->
+            </div>
+          </div>
+
+          <!-- MDT -->
+          <div class="publication-item">
+            <div class="publication-image">
+              <div class="image-wrapper">
+                <img src="images/cvpr_MDT_on.png" class="image-on" alt="MDT On">
+                <img src="images/cvpr_MDT_off.png" class="image-off" alt="MDT Off">
+              </div>
+            </div>
+            <div class="publication-content">
+              <div class="papertitle">A Polarization-aided Transformer for Image Deblurring via Motion Vector Decomposition</div>
+              <div class="authors">
                 <a href="https://github.com/Calvin11311">Duosheng Chen</a>,
                 <strong>Shihao Zhou</strong>,
                 <a href="https://jspan.github.io/">Jinshan Pan</a>,
                 <a href="https://jingleishi.github.io/">Jinglei Shi</a>,
                 <a href="https://github.com/qulishen/">Lishen Qu</a>,
-                <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>,
-                <br>
-                <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025</em> 
-                <font color="red"><strong>(Highlight)</strong></font>
-                <br>
+                <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>
+              </div>
+              <div class="conference">
+                IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025 
+                <span class="highlight">(Highlight)</span>
+              </div>
+              <div class="links">
                 <a href="https://github.com/Calvin11311/MDT">project page</a> /
                 <a href="https://arxiv.org/pdf/2404.00358">arXiv</a> /
                 <a href="data/CVPR25_MDT.bib">bibtex</a>
-              </td>
-            </tr>
-        
-            <!-- FlareX -->
-            <tr onmouseout="FlareX_stop()" onmouseover="FlareX_start()">
-              <td style="padding:20px;width:25%;vertical-align:top">
-                <div class="one">
-                  <div class="two" id="Flare_image">
-                    <img src="images/NIPS_Flare_off.png" width="160">
-                  </div>
-                  <img src="images/NIPS_Flare_on.png" width="160">
-                </div>
-                <script type="text/javascript">
-                  function FlareX_start() {
-                    document.getElementById("Flare_image").style.opacity = "1";
-                  }
-                  function FlareX_stop() {
-                    document.getElementById("Flare_image").style.opacity = "0";
-                  }
-                  FlareX_stop();
-                </script>
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:top">
-                <papertitle>FlareX: A Physics-Informed Dataset for Lens Flare Removal via 2D Synthesis and 3D Rendering</papertitle>
-                <br>
+              </div>
+            </div>
+          </div>
+
+          <!-- FlareX -->
+          <div class="publication-item">
+            <div class="publication-image">
+              <div class="image-wrapper">
+                <img src="images/NIPS_Flare_on.png" class="image-on" alt="FlareX On">
+                <img src="images/NIPS_Flare_off.png" class="image-off" alt="FlareX Off">
+              </div>
+            </div>
+            <div class="publication-content">
+              <div class="papertitle">FlareX: A Physics-Informed Dataset for Lens Flare Removal via 2D Synthesis and 3D Rendering</div>
+              <div class="authors">
                 <a href="https://github.com/qulishen/">Lishen Qu</a>,
                 Zhihao Liu,
                 <a href="https://jspan.github.io/">Jinshan Pan</a>,
                 <strong>Shihao Zhou</strong>,
                 <a href="https://jingleishi.github.io/">Jinglei Shi</a>,
                 <a href="https://github.com/Calvin11311">Duosheng Chen</a>,
-                <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>,
-                <br>
-                <em>Annual Conference on Neural Information Processing Systems (NeurIPS), 2025 (Datasets Track)</em>
-                <br>
+                <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>
+              </div>
+              <div class="conference">Annual Conference on Neural Information Processing Systems (NeurIPS), 2025 (Datasets Track)</div>
+              <div class="links">
                 <a href="https://github.com/qulishen/FlareX">project page</a> /
                 <a href="data/NIPS25_FlareX.bib">bibtex</a>
-              </td>
-            </tr>
-        
-            <!-- Flicker -->
-            <tr onmouseout="Flicker_stop()" onmouseover="Flicker_start()">
-              <td style="padding:20px;width:25%;vertical-align:top">
-                <div class="one">
-                  <div class="two" id="Flicker_image">
-                    <img src="images/NIPS_Flicker_off.png" height="90px" width="160">
-                  </div>
-                  <img src="images/NIPS_Flicker_on.png" height="90px" width="160">
-                </div>
-                <script type="text/javascript">
-                  function Flicker_start() {
-                    document.getElementById("Flicker_image").style.opacity = "1";
-                  }
-                  function Flicker_stop() {
-                    document.getElementById("Flicker_image").style.opacity = "0";
-                  }
-                  Flicker_stop();
-                </script>
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:top">
-                <papertitle>BurstDeflicker: A Benchmark Dataset for Flicker Removal in Dynamic Scenes</papertitle>
-                <br>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flicker -->
+          <div class="publication-item">
+            <div class="publication-image">
+              <div class="image-wrapper">
+                <img src="images/NIPS_Flicker_on.png" class="image-on" alt="Flicker On">
+                <img src="images/NIPS_Flicker_off.png" class="image-off" alt="Flicker Off">
+              </div>
+            </div>
+            <div class="publication-content">
+              <div class="papertitle">BurstDeflicker: A Benchmark Dataset for Flicker Removal in Dynamic Scenes</div>
+              <div class="authors">
                 <a href="https://github.com/qulishen/">Lishen Qu</a>,
                 Zhihao Liu,
                 <strong>Shihao Zhou</strong>,
@@ -255,166 +337,119 @@
                 <a href="https://liangjie.xyz">Jie Liang</a>,
                 <a href="https://huizeng.github.io/">Hui Zeng</a>,
                 <a href="https://www4.comp.polyu.edu.hk/~cslzhang/">Lei Zhang</a>,
-                <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>,
-                <br>
-                <em>Annual Conference on Neural Information Processing Systems (NeurIPS), 2025 (Datasets Track)</em>
-                <br>
+                <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>
+              </div>
+              <div class="conference">Annual Conference on Neural Information Processing Systems (NeurIPS), 2025 (Datasets Track)</div>
+              <div class="links">
                 <a href="https://github.com/qulishen/BurstDeflicker">project page</a> /
                 <a href="data/NIPS25_BurstDeflicker.bib">bibtex</a>
-              </td>
-            </tr>
-        
-            <!-- FPro -->
-            <tr onmouseout="FPro_stop()" onmouseover="FPro_start()">
-              <td style="padding:20px;width:25%;vertical-align:top">
-                <div class="one">
-                  <div class="two" id="FPro_image">
-                    <img src="images/eccv_FPro_off.png" width="160">
-                  </div>
-                  <img src="images/eccv_FPro_on.png" width="160">
-                </div>
-                <script type="text/javascript">
-                  function FPro_start() {
-                    document.getElementById("FPro_image").style.opacity = "1";
-                  }
-                  function FPro_stop() {
-                    document.getElementById("FPro_image").style.opacity = "0";
-                  }
-                  FPro_stop();
-                </script>
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:top">
-                <papertitle>Seeing the Unseen: A Frequency Prompt Guided Transformer for Image Restoration</papertitle>
-                <br>
+              </div>
+            </div>
+          </div>
+
+          <!-- FPro -->
+          <div class="publication-item">
+            <div class="publication-image">
+              <div class="image-wrapper">
+                <img src="images/eccv_FPro_on.png" class="image-on" alt="FPro On">
+                <img src="images/eccv_FPro_off.png" class="image-off" alt="FPro Off">
+              </div>
+            </div>
+            <div class="publication-content">
+              <div class="papertitle">Seeing the Unseen: A Frequency Prompt Guided Transformer for Image Restoration</div>
+              <div class="authors">
                 <strong>Shihao Zhou</strong>,
                 <a href="https://jspan.github.io/">Jinshan Pan</a>,
                 <a href="https://jingleishi.github.io/">Jinglei Shi</a>,
                 <a href="https://github.com/Calvin11311">Duosheng Chen</a>,
                 <a href="https://github.com/qulishen/">Lishen Qu</a>,
-                <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>,
-                <br>
-                <em>European Conference on Computer Vision (ECCV), 2024</em>
-                <br>
+                <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>
+              </div>
+              <div class="conference">European Conference on Computer Vision (ECCV), 2024</div>
+              <div class="links">
                 <a href="FPro/">project page</a> /
                 <a href="https://arxiv.org/pdf/2404.00288">arXiv</a> /
                 <a href="data/ECCV24_FPro.bib">bibtex</a>
-              </td>
-            </tr>
-        
-            <!-- AST -->
-            <tr onmouseout="AST_stop()" onmouseover="AST_start()">
-              <td style="padding:20px;width:25%;vertical-align:top">
-                <div class="one">
-                  <div class="two" id="AST_image">
-                    <img src="images/cvpr_AST_off.png" width="160">
-                  </div>
-                  <img src="images/cvpr_AST_on.png" width="160">
-                </div>
-                <script type="text/javascript">
-                  function AST_start() {
-                    document.getElementById("AST_image").style.opacity = "1";
-                  }
-                  function AST_stop() {
-                    document.getElementById("AST_image").style.opacity = "0";
-                  }
-                  AST_stop();
-                </script>
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:top">
-                <papertitle>Adapt or Perish: Adaptive Sparse Transformer with Attentive Feature Refinement for Image Restoration</papertitle>
-                <br>
+              </div>
+            </div>
+          </div>
+
+          <!-- AST -->
+          <div class="publication-item">
+            <div class="publication-image">
+              <div class="image-wrapper">
+                <img src="images/cvpr_AST_on.png" class="image-on" alt="AST On">
+                <img src="images/cvpr_AST_off.png" class="image-off" alt="AST Off">
+              </div>
+            </div>
+            <div class="publication-content">
+              <div class="papertitle">Adapt or Perish: Adaptive Sparse Transformer with Attentive Feature Refinement for Image Restoration</div>
+              <div class="authors">
                 <strong>Shihao Zhou</strong>,
                 <a href="https://github.com/Calvin11311">Duosheng Chen</a>,
                 <a href="https://jspan.github.io/">Jinshan Pan</a>,
                 <a href="https://jingleishi.github.io/">Jinglei Shi</a>,
-                <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>,
-                <br>
-                <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024</em>
-                <br>
+                <a href="https://cv.nankai.edu.cn/">Jufeng Yang</a>
+              </div>
+              <div class="conference">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024</div>
+              <div class="links">
                 <a href="AST/">project page</a> /
                 <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Zhou_Adapt_or_Perish_Adaptive_Sparse_Transformer_with_Attentive_Feature_Refinement_CVPR_2024_paper.html">pdf</a> /
                 <a href="data/CVPR24_AST.bib">bibtex</a>
-              </td>
-            </tr>
-        
-            <!-- JSL3d -->
-            <tr onmouseout="JSL3d_stop()" onmouseover="JSL3d_start()">
-              <td style="padding:20px;width:25%;vertical-align:top">
-                <div class="one">
-                  <div class="two" id="JSL3d_image">
-                    <img src="images/PR_JSL3d_on.jpeg" width="160">
-                  </div>
-                  <img src="images/PR_JSL3d_off.jpeg" width="160">
-                </div>
-                <script type="text/javascript">
-                  function JSL3d_start() {
-                    document.getElementById("JSL3d_image").style.opacity = "1";
-                  }
-                  function JSL3d_stop() {
-                    document.getElementById("JSL3d_image").style.opacity = "0";
-                  }
-                  JSL3d_stop();
-                </script>
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:top">
-                <a href="data/PR_JSL3d_paper.pdf">
-                  <papertitle>JSL3d: Joint subspace learning with implicit structure supervision for 3D pose estimation</papertitle>
-                </a>
-                <br>
+              </div>
+            </div>
+          </div>
+
+          <!-- JSL3d -->
+          <div class="publication-item">
+            <div class="publication-image">
+              <div class="image-wrapper">
+                <img src="images/PR_JSL3d_on.jpeg" class="image-on" alt="JSL3d On">
+                <img src="images/PR_JSL3d_off.jpeg" class="image-off" alt="JSL3d Off">
+              </div>
+            </div>
+            <div class="publication-content">
+              <a href="data/PR_JSL3d_paper.pdf" class="papertitle">JSL3d: Joint subspace learning with implicit structure supervision for 3D pose estimation</a>
+              <div class="authors">
                 <a href="https://mengxijiang.github.io/">Mengxi Jiang</a>,
                 <strong>Shihao Zhou</strong>,
                 Cuihua Li,
                 <a href="https://cs.xmu.edu.cn/info/1008/1152.htm">Yunqi Lei</a>
-                <br>
-                <em>Pattern Recognition (PR), 132(2022) 108965</em>
-                <br>
+              </div>
+              <div class="conference">Pattern Recognition (PR), 132(2022) 108965</div>
+              <div class="links">
                 project page /
                 <a href="data/PR_JSL3d_paper.pdf">pdf</a> /
                 <a href="data/PR_JSL3d.bib">bibtex</a>
-              </td>
-            </tr>
-        
-            <!-- DCGNet -->
-            <tr onmouseout="DCGNet_stop()" onmouseover="DCGNet_start()">
-              <td style="padding:20px;width:25%;vertical-align:top">
-                <div class="one">
-                  <div class="two" id="DCGNet_image">
-                    <img src="images/MM_DCGNet_on.png" width="160">
-                  </div>
-                  <img src="images/MM_DCGNet_off.png" width="160">
-                </div>
-                <script type="text/javascript">
-                  function DCGNet_start() {
-                    document.getElementById("DCGNet_image").style.opacity = "1";
-                  }
-                  function DCGNet_stop() {
-                    document.getElementById("DCGNet_image").style.opacity = "0";
-                  }
-                  DCGNet_stop();
-                </script>
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:top">
-                <a href="https://arxiv.org/pdf/2108.12384.pdf">
-                  <papertitle>DC-GNet: Deep Mesh Relation Capturing Graph Convolution Network for 3D Human Shape Reconstruction</papertitle>
-                </a>
-                <br>
+              </div>
+            </div>
+          </div>
+
+          <!-- DCGNet -->
+          <div class="publication-item">
+            <div class="publication-image">
+              <div class="image-wrapper">
+                <img src="images/MM_DCGNet_on.png" class="image-on" alt="DCGNet On">
+                <img src="images/MM_DCGNet_off.png" class="image-off" alt="DCGNet Off">
+              </div>
+            </div>
+            <div class="publication-content">
+              <a href="https://arxiv.org/pdf/2108.12384.pdf" class="papertitle">DC-GNet: Deep Mesh Relation Capturing Graph Convolution Network for 3D Human Shape Reconstruction</a>
+              <div class="authors">
                 <strong>Shihao Zhou</strong>,
                 <a href="https://mengxijiang.github.io/">Mengxi Jiang</a>,
                 Shanshan Cai,
                 <a href="https://cs.xmu.edu.cn/info/1008/1152.htm">Yunqi Lei</a>
-                <br>
-                <em>ACM International Conference on Multimedia (MM), 2021</em>
-                <br>
+              </div>
+              <div class="conference">ACM International Conference on Multimedia (MM), 2021</div>
+              <div class="links">
                 <a href="https://github.com/zsh2000/DCGNet">project page</a> /
                 <a href="https://arxiv.org/pdf/2108.12384.pdf">pdf</a> /
                 <a href="data/MM21_DCGNet.bib">bibtex</a>
-              </td>
-            </tr>
-        
-          </tbody>
-        </table>
-        
-        
+              </div>
+            </div>
+          </div>
+        </div>
         
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
@@ -447,7 +482,6 @@
           <td style="padding:20px;width:100%;vertical-align:middle">
             <heading>Academic Services</heading>
             <hr>
-       <!--<p>Journal Reviewer:  </p>-->
         Journal Reviewer:
         <font size="2"> 
         <ul>
@@ -462,8 +496,6 @@
         </ul>
         </font>
 
-
-        <!--<p>Conference Reviewer: </p>-->
         Conference Reviewer:
         <font size="2"> 
         <ul>
